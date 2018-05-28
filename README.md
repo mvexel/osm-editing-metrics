@@ -2,7 +2,7 @@
 
 This is a growing suite of node-osmium scripts that extract meaningful user activity data out of an OSM data file.
 
-This is the spiritual successor to OSMQualityMetrics.
+This is the spiritual successor to [OSMQualityMetrics](https://github.com/mvexel/OSMQualityMetrics).
 
 ## Scripts
 
