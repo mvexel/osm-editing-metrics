@@ -14,6 +14,8 @@ See the `README`s in each directory for more detail.
 
 ## Usage
 
+You need to have node v8, not newer.
+
 ```
 npm install
 node script_name.js INFILE OUTFILE
