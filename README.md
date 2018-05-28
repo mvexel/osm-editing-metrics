@@ -14,12 +14,11 @@ See the `README`s in each directory for more detail.
 
 ## Usage
 
-You need to have node v8, not newer.
+Requires `node-osmium` and the osmium library. See the [node-osmium README](https://github.com/osmcode/node-osmium) for install instructions / caveats. 
 
-```
-npm install
-node script_name.js INFILE OUTFILE
-```
+Each script can be run as follows:
+
+`node script_name.js INFILE OUTFILE`
 
 * The scripts take any OSM map data file that node-osmium will accept. (I only tested it with PBF files.)
 * The output is JSON
