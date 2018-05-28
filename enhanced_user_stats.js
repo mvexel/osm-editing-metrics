@@ -16,15 +16,8 @@ var users = {};
 
 function get_date_index(timestamp=(+ new Date())) {
     const date = new Date(timestamp);
-    // console.log(date);
     const base_year = 2004; // year 0
-    const y = date.getFullYear();
-    const m = date.getMonth();
-    // console.log(base_year);
-    // console.log(y);
-    // console.log(m);
-    // console.log((y - base_year) + m);
-    return (y - base_year) * 12 + m;
+    return (date.getFullYear() - base_year) * 12 + date.getMonth();
 }
 
 function process_osm_obj(osmobj, osmtype) {
@@ -38,7 +31,6 @@ function process_osm_obj(osmobj, osmtype) {
     } else {
     	// user is new
         // declare its object and add to users
-        console.log('new');
     	users[user] = {
     		'node': 0, 
     		'way': 0, 
@@ -93,8 +85,8 @@ console.log('users: ' + Object.keys(users).length);
 
 // write out the users json file
 // use this for pretty instead
-// fs.writeFile(outfile, JSON.stringify(users, null, 2), 'utf8', function(err) {
-fs.writeFile(outfile, JSON.stringify(users), 'utf8', function(err) {
+fs.writeFile(outfile, JSON.stringify(users, null, 2), 'utf8', function(err) {
+// fs.writeFile(outfile, JSON.stringify(users), 'utf8', function(err) {
 	if (err) {
 		console.log('file could not be written');
 	}
