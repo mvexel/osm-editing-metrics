@@ -59,6 +59,10 @@ npm install
 node basic_user_stats.js INFILE OUTFILE
 ```
 
+* The scripts take any OSM map data file that node-osmium will accept. (I only tested it with PBF files.)
+* Meaningful results can only be obtained using non-anonymized OSM data files like the ones found [here](https://osm-internal.download.geofabrik.de).
+* For complete editing history, use full history files. Interpret the results based on the file type used!
+
 ## Performance
 
 On a 2.3 GHz Intel Core i7 2013 Macbook Pro:
