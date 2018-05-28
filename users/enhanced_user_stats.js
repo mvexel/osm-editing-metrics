@@ -11,6 +11,7 @@ const fs = require('fs');
 // get input file from argv
 const infile = process.argv[2];
 const outfile = process.argv[3];
+const base_year = 2004; // year 0
 // create osmium reader and handler
 var reader = new osmium.Reader(infile);
 var handler = new osmium.Handler();
@@ -23,18 +24,20 @@ var users = {};
 
 function get_date_index(timestamp=(+ new Date())) {
     const date = new Date(timestamp);
-    const base_year = 2004; // year 0
     return (date.getFullYear() - base_year) * 12 + date.getMonth();
 }
 
 function process_osm_obj(osmobj, osmtype) {
     // extract salient metadata from OSM objects passing by and store in global variables
+    // skip if date is before our base year
+    const t = osmobj.timestamp_seconds_since_epoch * 1000;
+    if (new Date(t).getFullYear() < base_year) return;
     var user = osmobj.user;
     if (user in users) {
     	// user exists
         // adjust first / last seen dates 
-    	users[user]['first'] = Math.min(users[user]['first'], osmobj.timestamp_seconds_since_epoch);
-    	users[user]['last'] = Math.max(users[user]['last'], osmobj.timestamp_seconds_since_epoch);
+    	users[user]['first'] = Math.min(users[user]['first'], t);
+    	users[user]['last'] = Math.max(users[user]['last'], t);
     } else {
     	// user is new
         // declare its object and add to users
@@ -42,14 +45,14 @@ function process_osm_obj(osmobj, osmtype) {
     		'node': 0, 
     		'way': 0, 
     		'relation': 0, 
-    		'first': osmobj.timestamp_seconds_since_epoch, 
-    		'last': osmobj.timestamp_seconds_since_epoch,
+    		'first': t, 
+    		'last': t,
             'edit_history': new Array(get_date_index()).fill(0)};
     }	
     // increment edit count
     ++users[user][osmtype];
     // increment edit history
-    ++users[user]['edit_history'][get_date_index(osmobj.timestamp_seconds_since_epoch * 1000)];
+    ++users[user]['edit_history'][get_date_index(t)];
 }
 
 function postprocess_users() {
@@ -92,8 +95,8 @@ console.log('users: ' + Object.keys(users).length);
 
 // write out the users json file
 // use this for pretty instead
-fs.writeFile(outfile, JSON.stringify(users, null, 2), 'utf8', function(err) {
-// fs.writeFile(outfile, JSON.stringify(users), 'utf8', function(err) {
+// fs.writeFile(outfile, JSON.stringify(users, null, 2), 'utf8', function(err) {
+fs.writeFile(outfile, JSON.stringify(users), 'utf8', function(err) {
 	if (err) {
 		console.log('file could not be written');
 	}

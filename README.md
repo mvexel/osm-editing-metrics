@@ -6,81 +6,22 @@ This is the spiritual successor to [OSMQualityMetrics](https://github.com/mvexel
 
 ## Scripts
 
-### basic_user_stats.js
+* `edits/` -- scripts for generic editing metrics
+* `users/` -- scripts for user-centered metrics
+* `highways/` -- scripts for highway-specific metrics 
 
-Generates basic user metrics. The output looks like this (prettified):
-
-```
-{
-  "osm_username": {
-    "node": 4572,
-    "way": 116,
-    "relation": 0,
-    "first": 1312970358,
-    "last": 1377240309,
-    "age": 64269951,
-    "total": 4688
-  },
-  ...
-}
-```
-
-### enhanced_user_stats.js
-
-Generates user metrics enhanced with number of edits per month:
-
-```
-{
-  "osm_username": {
-    "node": 720,
-    "way": 4,
-    "relation": 0,
-    "first": 1398935191,
-    "last": 1398935522,
-    "edit_history": [
-      10,
-      0,
-      0,
-      22,
-      2,
-      7,
-      ...]
-  },
-  ...
-}
-```
-
-The `edit_history` shows the number of edits in a given month. The first index in this array is January, 2004.
-
-### edit_history.js
-
-Generates month-by-month feature editing volume:
-
-```
-[...,0,29714,185,842,3,0,0,424,0,0,1847,1,1021,5693,47787,760,...]
-```
-
-The first index in this array is January, 2004.
-
-### highway_history.js
-
-Generates month-by-month counts of new highways (`highway=*`) added:
-
-```
-[...,0,29714,185,842,3,0,0,424,0,0,1847,1,1021,5693,47787,760,...]
-```
-
-The first index in this array is January, 2004.
+See the `README`s in each directory for more detail.
 
 ## Usage
 
 ```
 npm install
-node basic_user_stats.js INFILE OUTFILE
+node script_name.js INFILE OUTFILE
 ```
 
 * The scripts take any OSM map data file that node-osmium will accept. (I only tested it with PBF files.)
-* Meaningful results can only be obtained using non-anonymized OSM data files like the ones found [here](https://osm-internal.download.geofabrik.de).
+* The output is JSON
+* Meaningful results can only be obtained using non-anonymized OSM data files like the ones found [here](https://osm-internal.download.geofabrik.de)
 * For complete editing history, use full history files. Interpret the results based on the file type used!
 
 ## Notes on Performance

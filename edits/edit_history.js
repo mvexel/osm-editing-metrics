@@ -11,6 +11,7 @@ const fs = require('fs');
 // get input file from argv
 const infile = process.argv[2];
 const outfile = process.argv[3];
+const base_year = 2004; // year 0
 // create osmium reader and handler
 var reader = new osmium.Reader(infile);
 var handler = new osmium.Handler();
@@ -22,7 +23,10 @@ function get_date_index(timestamp=(+ new Date())) {
 }
 
 function process_osm_obj(osmobj, osmtype) {
-    ++edit_history[get_date_index(osmobj.timestamp_seconds_since_epoch * 1000)];
+    const t = osmobj.timestamp_seconds_since_epoch * 1000;
+    // skip if date is before our base year
+    if (new Date(t).getFullYear() < base_year) return;
+    ++edit_history[get_date_index(t)];
     ++edits;
 }
 
