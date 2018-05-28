@@ -52,6 +52,16 @@ Generates user metrics enhanced with number of edits per month:
 
 The `edit_history` shows the number of edits in a given month. The first index in this array is January, 2004.
 
+### edit_history.js
+
+Generates month-by-month feature editing volume:
+
+```
+[...,0,29714,185,842,3,0,0,424,0,0,1847,1,1021,5693,47787,760,...]
+```
+
+The first index in this array is January, 2004.
+
 ## Usage
 
 ```
