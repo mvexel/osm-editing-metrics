@@ -1,3 +1,10 @@
+/*
+highway_history
+===============
+Takes an OSM full history data file,
+and counts edits month by month.
+*/
+
 var osmium = require('osmium');
 const fs = require('fs');
 

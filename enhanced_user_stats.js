@@ -1,3 +1,10 @@
+/*
+enhanced_user_stats
+===============
+Takes an OSM full history data file,
+and tallies individual user contributions month by month.
+*/
+
 var osmium = require('osmium');
 const fs = require('fs');
 

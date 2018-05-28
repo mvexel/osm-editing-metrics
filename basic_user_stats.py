@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+# This file is provided for reference / educational
+# purposes. I used it to compare performance between
+# the osmium Node and Python bindings. Compare to the
+# Javascript version for an example of how to implement
+# this in JS vs Python
+
 import osmium
 import sys
 import os

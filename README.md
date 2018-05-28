@@ -62,6 +62,16 @@ Generates month-by-month feature editing volume:
 
 The first index in this array is January, 2004.
 
+### highway_history.js
+
+Generates month-by-month counts of new highways (`highway=*`) added:
+
+```
+[...,0,29714,185,842,3,0,0,424,0,0,1847,1,1021,5693,47787,760,...]
+```
+
+The first index in this array is January, 2004.
+
 ## Usage
 
 ```
@@ -73,7 +83,9 @@ node basic_user_stats.js INFILE OUTFILE
 * Meaningful results can only be obtained using non-anonymized OSM data files like the ones found [here](https://osm-internal.download.geofabrik.de).
 * For complete editing history, use full history files. Interpret the results based on the file type used!
 
-## Performance
+## Notes on Performance
+
+These scripts are not designed for or tested on huge OSM data files. You are likely to run into performance and / or memory issues if you would run some of these scripts on the entire planet. You are of course most welcome to try, and contribute improvements!
 
 On a 2.3 GHz Intel Core i7 2013 Macbook Pro:
 
