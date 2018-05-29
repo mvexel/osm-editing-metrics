@@ -1,8 +1,8 @@
 /*
-basic_user_stats
-===============
-Takes an OSM full history data file,
-and tallies individual user contributions.
+user_hull
+=========
+Takes an OSM full history data file and an OSM user ID,
+and outputs a convex hull of all new nodes created by that user.
 */
 
 var osmium = require('osmium');
