@@ -12,6 +12,8 @@ This is the spiritual successor to [OSMQualityMetrics](https://github.com/mvexel
 
 See the `README`s in each directory for more detail.
 
+To write your own, use `script_template.js` in the root directory as a starting point.
+
 ## Usage
 
 Requires `node-osmium` and the osmium library. See the [node-osmium README](https://github.com/osmcode/node-osmium) for install instructions / caveats. 
@@ -24,6 +26,10 @@ Each script can be run as follows:
 * The output is JSON
 * Meaningful results can only be obtained using non-anonymized OSM data files like the ones found [here](https://osm-internal.download.geofabrik.de)
 * For complete editing history, use full history files. Interpret the results based on the file type used!
+
+## Contributing
+
+Certainly! Use `script_template.js` to start writing your own scripts, and submit a pull request with your results.
 
 ## Notes on Performance
 
