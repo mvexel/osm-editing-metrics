@@ -19,7 +19,7 @@ The output looks like this (prettified):
 }
 ```
 
-### enhanced_user_stats.js
+## enhanced_user_stats.js
 
 Generates user metrics enhanced with number of edits per month:
 
@@ -47,3 +47,11 @@ Generates user metrics enhanced with number of edits per month:
 The `edit_history` shows the number of edits in a given month. 
 
 The first index in this array represents January, 2004. This is defined in the `base_year` variable.
+
+## deleting_users.js
+
+Generates a list of users who have deleted things, and how many:
+
+```
+{"user1":2,"user2":224,"user3":25,"user4":247,...}
+```

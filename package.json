@@ -1,9 +1,10 @@
 {
-  "name": "osmium-play",
+  "name": "osm-editing-metrics",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@turf/turf": "^5.1.6",
     "osmium": "^0.5.6"
   },
   "devDependencies": {},
@@ -11,5 +12,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Martijn van Exel",
-  "license": "Apache 2.0"
+  "license": "MIT",
+  "repository": "https://github.com/mvexel/osm-editing-metrics"
 }
