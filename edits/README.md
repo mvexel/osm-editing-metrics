@@ -1,3 +1,8 @@
+# Edits scripts
+
+**These scripts require a full history file to report accurate results.**
+
+
 ## edit_history.js
 
 Generates month-by-month feature editing volume:

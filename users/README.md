@@ -1,3 +1,7 @@
+# User metrics scripts
+
+**These scripts require a full history file to report accurate results.**
+
 ## basic_user_stats.js
 
 Generates basic user metrics. 
@@ -51,7 +55,6 @@ The first index in this array represents January, 2004. This is defined in the `
 ## deleting_users.js
 
 Generates a list of users who have deleted things, and how many.
-**This script requires a full history file to report anything.**
 
 ```
 {"user1":2,"user2":224,"user3":25,"user4":247,...}

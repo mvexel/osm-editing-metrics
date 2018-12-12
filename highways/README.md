@@ -1,3 +1,7 @@
+# Highway Scripts
+
+**These scripts require a full history file to report accurate results.**
+
 ## highway_history.js
 
 Generates month-by-month counts of new highways (`highway=*`) added:
