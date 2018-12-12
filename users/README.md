@@ -50,7 +50,8 @@ The first index in this array represents January, 2004. This is defined in the `
 
 ## deleting_users.js
 
-Generates a list of users who have deleted things, and how many:
+Generates a list of users who have deleted things, and how many.
+**This script requires a full history file to report anything.**
 
 ```
 {"user1":2,"user2":224,"user3":25,"user4":247,...}
