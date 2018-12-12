@@ -38,8 +38,5 @@ osmium.apply(reader, handler);
 
 // write out the users json file
 fs.writeFile(outfile, JSON.stringify(users), 'utf8', function(err) {
-	if (err) {
-		console.log('file could not be written');
-	}
-	console.log('saved');
+	console.log(err ? 'file could not be written' : 'saved')
 });

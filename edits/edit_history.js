@@ -68,8 +68,5 @@ console.log('edits: ' + edits);
 // use this for pretty instead
 // fs.writeFile(outfile, JSON.stringify(edit_history, null, 2), 'utf8', function(err) {
 fs.writeFile(outfile, JSON.stringify(edit_history), 'utf8', function(err) {
-	if (err) {
-		console.log('file could not be written');
-	}
-	console.log('saved');
+	console.log(err ? 'file could not be written' : 'saved')
 });

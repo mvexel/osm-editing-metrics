@@ -65,8 +65,5 @@ console.log('ways: ' + ways);
 // use this for pretty instead
 // fs.writeFile(outfile, JSON.stringify(hist, null, 2), 'utf8', function(err) {
 fs.writeFile(outfile, JSON.stringify(hist), 'utf8', function(err) {
-	if (err) {
-		console.log('file could not be written');
-	}
-	console.log('saved');
+    console.log(err ? 'file could not be written' : 'saved')
 });

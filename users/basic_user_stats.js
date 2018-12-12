@@ -83,8 +83,5 @@ console.log('users: ' + Object.keys(users).length);
 
 // write out the users json file
 fs.writeFile(outfile, JSON.stringify(users, null, 2), 'utf8', function(err) {
-	if (err) {
-		console.log('file could not be written');
-	}
-	console.log('saved');
+    console.log(err ? 'file could not be written' : 'saved')
 });

@@ -73,8 +73,5 @@ fs.writeFile(outfile, JSON.stringify(
     [hist_new, hist_changed, hist_deleted]),
     'utf8', 
     function(err) {
-    	if (err) {
-    		console.log('file could not be written');
-    	}
-    	console.log('saved');
+        console.log(err ? 'file could not be written' : 'saved')
     });
